@@ -1,0 +1,94 @@
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.ec-gallery {
+    width: 100%;
+    outline: none !important; 
+    list-style: none;
+}
+
+.ec-gallery li {
+    display: inline-block;
+    list-style: none;
+}
+
+.ec-gallery-thumb img {
+    width: 75px;
+    border: 2px solid transparent;
+}
+.ec-gallery-thumb {
+    outline: none !important;
+}
+
+.ec-gallery-thumb-active img {
+    border: 2px solid black;
+}
+
+.ec-gallery {
+    margin-top: 20px;
+}
+
+.ec-gallery-clear {
+    clear: both;
+}
+
+#ec-gallery-main-area-container {
+    margin-right: -250px;
+    float:left;
+    width:100%;
+}
+
+#ec-gallery-main-image-container, #ec-gallery-main-youtube-container {
+    margin-right: 270px; /* 20px added for centre margin */
+}
+
+#ec-gallery-main-image {
+    width: 100%;
+}
+
+#ec-gallery-selection-container {
+    width:250px;
+    float:left;
+}
+
+@media only screen and (max-width: 600px)  {
+    #ec-gallery-main-image-container, #ec-gallery-main-youtube-container {
+        margin-right:0px;
+        margin-bottom:20px;
+    }
+    #ec-gallery-main-image {
+        margin-right:0px;
+        width:100%;
+    }
+    #ec-gallery-selection-container {
+        width: 100%;
+        clear:left;
+    }
+}
+
+#ec-gallery-main-youtube-subcontainer {
+    float: none;
+    clear: both;
+    width: 100%;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+}
+#ec-gallery-main-youtube-subcontainer iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 98%;
+    height: 100%;
+}
+
+.product-image a {
+    outline: none !important; 
+}

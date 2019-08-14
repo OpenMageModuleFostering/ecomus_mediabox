@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Ecomus_Mediabox extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Ecomus
+ * @package        Ecomus_Mediabox
+ * @copyright      Copyright (c) 2014
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <ecomus_mediabox>
+                                        <title>Ecomus Mediabox</title>
+                                    </ecomus_mediabox>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <ecomus_mediabox translate="title" module="ecomus_mediabox">
+                        <title>Ecomus Mediabox</title>
+                        <children>
+                            <youtubevideo translate="title" module="ecomus_mediabox">
+                                <title>Manage Youtube Videos</title>
+                                <sort_order>0</sort_order>
+                            </youtubevideo>
+                        </children>
+                    </ecomus_mediabox>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <ecomus_mediabox translate="title" module="ecomus_mediabox">
+            <depends>
+                <config>ecomus_mediabox/ecomus_mediabox/enabled</config>
+            </depends>
+            <title>Ecomus Mediabox</title>
+            <sort_order>75</sort_order>
+            <children>
+                <youtubevideo translate="title" module="ecomus_mediabox">
+                    <title>Manage Youtube Videos</title>
+                    <action>adminhtml/mediabox_youtubevideo</action>
+                    <sort_order>0</sort_order>
+                </youtubevideo>
+            </children>
+        </ecomus_mediabox>
+    </menu>
+</config>

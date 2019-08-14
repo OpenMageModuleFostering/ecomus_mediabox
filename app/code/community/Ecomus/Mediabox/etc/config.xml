@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Ecomus_Mediabox extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Ecomus
+ * @package        Ecomus_Mediabox
+ * @copyright      Copyright (c) 2014
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <modules>
+        <Ecomus_Mediabox>
+            <version>1.0.2</version>
+        </Ecomus_Mediabox>
+    </modules>
+    <global>
+        <resources>
+            <ecomus_mediabox_setup>
+                <setup>
+                    <module>Ecomus_Mediabox</module>
+                    <class>Ecomus_Mediabox_Model_Resource_Setup</class>
+                </setup>
+            </ecomus_mediabox_setup>
+        </resources>
+        <blocks>
+            <ecomus_mediabox>
+                <class>Ecomus_Mediabox_Block</class>
+            </ecomus_mediabox>
+        </blocks>
+        <helpers>
+            <ecomus_mediabox>
+                <class>Ecomus_Mediabox_Helper</class>
+            </ecomus_mediabox>
+        </helpers>
+        <models>
+            <ecomus_mediabox>
+                <class>Ecomus_Mediabox_Model</class>
+                <resourceModel>ecomus_mediabox_resource</resourceModel>
+            </ecomus_mediabox>
+            <ecomus_mediabox_resource>
+                <class>Ecomus_Mediabox_Model_Resource</class>
+                <entities>
+                    <youtubevideo>
+                        <table>ecomus_mediabox_youtubevideo</table>
+                    </youtubevideo>
+                    <youtubevideo_store>
+                        <table>ecomus_mediabox_youtubevideo_store</table>
+                    </youtubevideo_store>
+                    <youtubevideo_product>
+                        <table>ecomus_mediabox_youtubevideo_product</table>
+                    </youtubevideo_product>
+                </entities>
+            </ecomus_mediabox_resource>
+        </models>
+    </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <ecomus_mediabox>
+                    <file>ecomus_mediabox.xml</file>
+                </ecomus_mediabox>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Ecomus_Mediabox>
+                    <files>
+                        <default>Ecomus_Mediabox.csv</default>
+                    </files>
+                </Ecomus_Mediabox>
+            </modules>
+        </translate>
+        <events>
+            <core_block_abstract_prepare_layout_after>
+                <observers>
+                    <ecomus_mediabox_youtubevideo_product>
+                        <type>singleton</type>
+                        <class>ecomus_mediabox/adminhtml_observer</class>
+                        <method>addProductYoutubevideoBlock</method>
+                    </ecomus_mediabox_youtubevideo_product>
+                </observers>
+            </core_block_abstract_prepare_layout_after>
+            <catalog_product_save_after>
+                <observers>
+                    <ecomus_mediabox_youtubevideo_product>
+                        <type>singleton</type>
+                        <class>ecomus_mediabox/adminhtml_observer</class>
+                        <method>saveProductYoutubevideoData</method>
+                    </ecomus_mediabox_youtubevideo_product>
+                </observers>
+            </catalog_product_save_after>
+            <clean_catalog_images_cache_after>
+                <observers>
+                    <ecomus_mediabox_clean_cache>
+                        <type>singleton</type>
+                        <class>ecomus_mediabox/adminhtml_observer</class>
+                        <method>cleanVideoImagesCache</method>
+                    </ecomus_mediabox_clean_cache>
+                </observers>
+            </clean_catalog_images_cache_after>
+        </events>
+        <global_search>
+            <youtubevideo>
+                <class>ecomus_mediabox/adminhtml_search_youtubevideo</class>
+                <acl>ecomus_mediabox</acl>
+            </youtubevideo>
+        </global_search>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Ecomus_Mediabox before="Mage_Adminhtml">Ecomus_Mediabox_Adminhtml</Ecomus_Mediabox>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <frontend>
+        <layout>
+            <updates>
+                <ecomus_mediabox>
+                    <file>ecomus_mediabox.xml</file>
+                </ecomus_mediabox>
+            </updates>
+        </layout>
+    </frontend>
+    <default>
+        <ecomus_mediabox>
+            <ecomus_mediabox>
+                <main_image_size>265</main_image_size>
+            </ecomus_mediabox>
+        </ecomus_mediabox>
+        <ecomus_mediabox>
+            <ecomus_mediabox>
+                <thumbnail_size>56</thumbnail_size>
+            </ecomus_mediabox>
+        </ecomus_mediabox>
+    </default>
+</config>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <tabs>
+        <ecomus_extensions translate="label" module="ecomus_mediabox">
+            <label>Ecomus Extensions</label>
+            <sort_order>1050</sort_order>
+        </ecomus_extensions>
+    </tabs>
+    <sections>
+        <ecomus_mediabox translate="label" module="ecomus_mediabox">
+            <label>Ecomus Mediabox</label>
+            <tab>ecomus_extensions</tab>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <ecomus_mediabox translate="label" module="ecomus_mediabox">
+                    <label>Mediabox Options</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Enabled</label>
+                            <comment>Enable/Disable the Mediabox</comment>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </enabled>
+                        <main_image_size translate="label">
+                            <label>Main Image Size</label>
+                            <comment>Main Image Size (pixels) on Product View Page</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-greater-than-zero required-entry</validate>
+                        </main_image_size>
+                        <thumbnail_size translate="label">
+                            <label>Thumbnail Size</label>
+                            <comment>Thumbnail Size (pixels) on Product View Page</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-greater-than-zero required-entry</validate>
+                        </thumbnail_size>
+                    </fields>
+                </ecomus_mediabox>
+            </groups>
+        </ecomus_mediabox>
+    </sections>
+</config>

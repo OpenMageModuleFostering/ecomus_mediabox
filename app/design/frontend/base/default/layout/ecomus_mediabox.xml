@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">   
+    <catalog_product_view>
+        <reference name="head">
+            <!-- Added in as skin js to ensure compatibility if rwd package used -->
+            <action method="addItem" ifconfig="ecomus_mediabox/ecomus_mediabox/enabled"><type>skin_js</type><script>js/ec-mediabox/jQuery-1.11.1.js</script></action>
+            <action method="addItem" ifconfig="ecomus_mediabox/ecomus_mediabox/enabled"><type>skin_js</type><script>js/ec-mediabox/popup.js</script></action>
+            <action method="addItem" ifconfig="ecomus_mediabox/ecomus_mediabox/enabled"><type>skin_js</type><script>js/ec-mediabox/ec-mediabox.js</script></action>
+            <action method="addItem" ifconfig="ecomus_mediabox/ecomus_mediabox/enabled"><type>skin_css</type><name>css/ec-mediabox/popup.css</name></action>
+            <action method="addItem" ifconfig="ecomus_mediabox/ecomus_mediabox/enabled"><type>skin_css</type><name>css/ec-mediabox/mediabox.css</name></action>
+        </reference>
+        <reference name="product.info.media">
+            <action method="setTemplate" ifconfig="ecomus_mediabox/ecomus_mediabox/enabled"><template>ecomus-mediabox/media.phtml</template></action>
+        </reference>
+    </catalog_product_view>
+</layout>

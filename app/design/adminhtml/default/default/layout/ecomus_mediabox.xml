@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Ecomus_Mediabox extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Ecomus
+ * @package        Ecomus_Mediabox
+ * @copyright      Copyright (c) 2014
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+--> 
+<layout>
+    <adminhtml_mediabox_youtubevideo_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>ecomus_mediabox/youtubevideo</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="ecomus_mediabox/adminhtml_youtubevideo" name="youtubevideo" />
+
+        </reference>
+    </adminhtml_mediabox_youtubevideo_index>
+    <adminhtml_mediabox_youtubevideo_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="ecomus_mediabox/adminhtml_youtubevideo_grid" name="youtubevideo_grid"/>
+        </block>
+    </adminhtml_mediabox_youtubevideo_grid>
+    <!-- Youtubevideo add/edit action -->
+    <adminhtml_mediabox_youtubevideo_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>ecomus_mediabox/youtubevideo</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="ecomus_mediabox/adminhtml_youtubevideo_edit" name="youtubevideo_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="ecomus_mediabox/adminhtml_youtubevideo_edit_tabs" name="youtubevideo_tabs"></block>
+        </reference>
+    </adminhtml_mediabox_youtubevideo_edit>
+
+    <adminhtml_mediabox_youtubevideo_catalog_product_youtubevideos>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="ecomus_mediabox/adminhtml_catalog_product_edit_tab_youtubevideo" name="product.edit.tab.youtubevideo"/>
+            <block type="adminhtml/widget_grid_serializer" name="youtubevideo_grid_serializer">
+                <reference name="youtubevideo_grid_serializer">
+                    <action method="initSerializerBlock">
+                        <grid_block_name>product.edit.tab.youtubevideo</grid_block_name>
+                        <data_callback>getSelectedYoutubevideos</data_callback>
+                        <hidden_input_name>youtubevideos</hidden_input_name>
+                        <reload_param_name>product_youtubevideos</reload_param_name>
+                    </action>
+                    <action method="addColumnInputName">
+                        <input_name>position</input_name>
+                    </action>
+                </reference>
+            </block>
+        </block>
+    </adminhtml_mediabox_youtubevideo_catalog_product_youtubevideos>
+    <adminhtml_mediabox_youtubevideo_catalog_product_youtubevideosgrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="ecomus_mediabox/adminhtml_catalog_product_edit_tab_youtubevideo" name="product.edit.tab.youtubevideo"/>
+        </block>
+    </adminhtml_mediabox_youtubevideo_catalog_product_youtubevideosgrid>
+    <adminhtml_mediabox_youtubevideo_products>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="ecomus_mediabox/adminhtml_youtubevideo_edit_tab_product" name="youtubevideo.edit.tab.product"/>
+            <block type="adminhtml/widget_grid_serializer" name="product_grid_serializer">
+                <reference name="product_grid_serializer">
+                    <action method="initSerializerBlock">
+                        <grid_block_name>youtubevideo.edit.tab.product</grid_block_name>
+                            <data_callback>getSelectedProducts</data_callback>
+                            <hidden_input_name>products</hidden_input_name>
+                            <reload_param_name>youtubevideo_products</reload_param_name>
+                    </action>
+                    <action method="addColumnInputName">
+                        <input_name>position</input_name>
+                    </action>
+                </reference>
+            </block>
+        </block>
+    </adminhtml_mediabox_youtubevideo_products>
+    <adminhtml_mediabox_youtubevideo_productsgrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="ecomus_mediabox/adminhtml_youtubevideo_edit_tab_product" name="youtubevideo.edit.tab.product"/>
+        </block>
+    </adminhtml_mediabox_youtubevideo_productsgrid>
+</layout>
