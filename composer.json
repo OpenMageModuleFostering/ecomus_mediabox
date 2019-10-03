@@ -1,7 +1,7 @@
 {
-    "name": "OpenMageModuleFostering\/Ecomus_Mediabox",
+    "name": "openmage-module-fostering\/ecomus_mediabox",
     "type": "magento-module",
-    "license": "OSL",
+    "license": "OSL-3.0",
     "homepage": "",
     "description": "Fully responsive Amazon style modal for showing images and Youtube videos in a modal \/ lightbox window.",
     "authors": [
