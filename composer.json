@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/Ecomus_Mediabox",
+    "name": "OpenMageModuleFostering\/Ecomus_Mediabox",
     "type": "magento-module",
     "license": "OSL",
     "homepage": "",
-    "description": "Fully responsive Amazon style modal for showing images and Youtube videos in a modal / lightbox window.",
+    "description": "Fully responsive Amazon style modal for showing images and Youtube videos in a modal \/ lightbox window.",
     "authors": [
-    {
-        "name": "Ecomus Ltd",
-        "email": "info@ecomus.co.uk"
-    }
-],
+        {
+            "name": "Ecomus Ltd",
+            "email": "info@ecomus.co.uk"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
